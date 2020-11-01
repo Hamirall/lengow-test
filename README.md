@@ -37,7 +37,7 @@ python manage.py runsever
 
 Pour aller plus loin
 
-- :heavy_check_mark Ajouter/modifier une commande
-- :white_check_mark Utiliser Django Rest Framework pour mettre à disposition les commandes précédemment enregistrées en base de données via une API
+- :heavy_check_mark: Ajouter/modifier une commande
+- :white_check_mark: Utiliser Django Rest Framework pour mettre à disposition les commandes précédemment enregistrées en base de données via une API
 
 
