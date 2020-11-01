@@ -1,0 +1,14 @@
+{% extends 'orders/base.html' %}
+
+{% block content %}
+<div>
+    <ul>
+        <li>Id: {{ object.id }}</li>
+        <li>Marketplace: {{ object.marketplace }}</li>
+        <li>id_flux: {{ object.id_flux }}</li>
+        <li>Montant de la commande: {{ object.order_amount }}</li>
+        <li>Date de la commande: {{ object.order_purchase_date }}</li>
+    </ul>
+    <a href="{% url 'order-update' object.id %}" class="btn btn-primary">Modifier</a>
+</div>
+{% endblock %}

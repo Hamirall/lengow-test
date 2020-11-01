@@ -1,0 +1,50 @@
+{% extends 'orders/base.html' %}
+
+{% block content %}
+    <div class="col-12">
+        <h1>Liste des commandes</h1>
+    </div>
+
+    <div class="col">
+        <a href="{% url 'create-order' %}" class="btn btn-primary">Créer une commande</a>
+        <!-- <button type="button" class="btn btn-primary">Créer une commande</button> -->
+    </div>
+
+    <div class="col-12">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Marketplace</th>
+                <th scope="col">Id Flux</th>
+                <th scope="col">Date d'achat</th>
+                <th scope="col">Montant de la commande</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for order in object_list %}
+                    <tr>
+                        <th scope="row">
+                            <a href="{% url 'order-detail' order.id %}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                </svg>
+                            </a>
+                        </th>
+                        <th>{{ order.id }}</th>
+                        <td>{{ order.marketplace }}</td>
+                        <td>{{ order.id_flux }}</td>
+                        {% if order.order_purchase_date %}
+                            <td>{{ order.order_purchase_date }}</td>
+                        {% else %}
+                            <td>Pas de date</td>
+                        {% endif %}
+                        <td>{{ order.order_amount }} €</td>
+                    </tr>                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
