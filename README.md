@@ -28,7 +28,7 @@ Démarre le serveur web
 python manage.py runsever
 ```
 
-# Exercices
+# Test
 - :heavy_check_mark: Créer un projet Django
 - :heavy_check_mark: Créer une app "orders".
 - :heavy_check_mark: Créer un modèle "Order" reflétant les données présentent dans l'API: http://test.lengow.io/orders-test.xml Vous n'êtes pas obligé de gérer tout les champs, 4-5 champs suffisent.
@@ -38,6 +38,6 @@ python manage.py runsever
 Pour aller plus loin
 
 - :heavy_check_mark: Ajouter/modifier une commande
-- :white_check_mark: Utiliser Django Rest Framework pour mettre à disposition les commandes précédemment enregistrées en base de données via une API
+- Utiliser Django Rest Framework pour mettre à disposition les commandes précédemment enregistrées en base de données via une API
 
 
