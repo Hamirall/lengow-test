@@ -5,9 +5,18 @@
         <h1>Liste des commandes</h1>
     </div>
 
-    <div class="col">
+    <div class="col-3">
         <a href="{% url 'create-order' %}" class="btn btn-primary">Créer une commande</a>
         <!-- <button type="button" class="btn btn-primary">Créer une commande</button> -->
+    </div>
+
+    <div class="col-4">
+        <form action="{% url 'order-list' %}" method="GET">
+            <div class="form-group">
+                <input type="text" class="form-control" name="q" placeholder="Rechercher... (marketplace, id_flux)" value="{{ request.GET.q }}">
+                <button class="btn btn-primary" type="submit">Rechercher</button>
+            </div>
+        </form>
     </div>
 
     <div class="col-12">

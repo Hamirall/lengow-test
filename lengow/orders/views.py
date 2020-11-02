@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
+from django.db.models import Q
 from django.views import View
 from orders.models import Order
 from .forms.order import OrdersForm
@@ -11,6 +12,17 @@ from datetime import date
 
 class OrderList(ListView):
     model = Order
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            object_list = Order.objects.filter(
+                Q(marketplace__icontains=query) | Q(id_flux__icontains=query)
+            )
+        else:
+           object_list = Order.objects.all()
+
+        return object_list
 
 class OrderDetail(DetailView):
     model = Order
