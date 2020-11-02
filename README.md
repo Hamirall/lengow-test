@@ -28,6 +28,8 @@ Démarre le serveur web
 python manage.py runsever
 ```
 
+Url de départ: http://127.0.0.1:8000/orders/list
+
 # Test
 - :heavy_check_mark: Créer un projet Django
 - :heavy_check_mark: Créer une app "orders".
